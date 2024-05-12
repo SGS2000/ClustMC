@@ -6,9 +6,9 @@ template:
 navbar:
   bg: primary
   structure:
-    right: [twitter, github]
+    right: [linkedin, github]
   components:
-    twitter:
+    linkedin:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
       aria-label: LinkedIn
