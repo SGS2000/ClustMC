@@ -12,6 +12,7 @@ Pruebas de comparaciones múltiples basadas en conglomerados.
 Useful links:
 \itemize{
   \item \url{https://github.com/SGS2000/ClustMC}
+  \item \url{https://sgs2000.github.io/ClustMC/}
   \item Report bugs at \url{https://github.com/SGS2000/ClustMC/issues}
 }
 
