@@ -4,6 +4,8 @@
 # ClustMC
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/SGS2000/ClustMC/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/SGS2000/ClustMC/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 ClustMC implements cluster based multiple comparisons tests.
