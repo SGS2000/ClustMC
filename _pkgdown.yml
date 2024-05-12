@@ -1,4 +1,13 @@
 url: https://sgs2000.github.io/ClustMC/
 template:
   bootstrap: 5
+  bootswatch: flatly
 
+navbar:
+  structure:
+    right: [twitter, github]
+  components:
+    twitter:
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
+      aria-label: LinkedIn
