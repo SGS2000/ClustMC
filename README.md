@@ -19,7 +19,7 @@ conglomerados.
 ## Installation / Instalación
 
 The package can be installed from GitHub: / El paquete puede instalarse
-desde GitHub
+desde GitHub:
 
 ``` r
 devtools::install_github("SGS2000/ClustMC")
@@ -40,10 +40,10 @@ de tratamiento diferentes.
 library(ClustMC)
 
 data("PlantGrowth")
-plants_weigths <- PlantGrowth$weight
+plants_weights <- PlantGrowth$weight
 plants_trt <- PlantGrowth$group
 
-anova_model <- aov(plants_weigths ~ plants_trt)
+anova_model <- aov(plants_weights ~ plants_trt)
 
 dgc_test(y = anova_model, trt = "plants_trt")
 ```
