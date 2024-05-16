@@ -43,7 +43,7 @@ El siguiente ejemplo aplica la Prueba de Di Rienzo, Guzmán y Casanoves para eva
 ```{r example}
 library(ClustMC)
 
-data("PlantGrowth")
+data(PlantGrowth)
 plants_weights <- PlantGrowth$weight
 plants_trt <- PlantGrowth$group
 

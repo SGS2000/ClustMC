@@ -2,58 +2,59 @@
 % Please edit documentation in R/dgc.R
 \name{dgc_test}
 \alias{dgc_test}
-\title{Test DGC}
+\title{DGC Test}
 \usage{
 dgc_test(y, trt, alpha = 0.05, show_plot = T, console = T, abline_options, ...)
 }
 \arguments{
-\item{y}{O bien un modelo (creado con \code{lm()} o \code{aov()}) o bien un vector
-numerico con los valores de la variable respuesta para cada unidad.}
+\item{y}{Either a model (created with \code{lm()} o \code{aov()}) or a numerical vector
+with the values of the response variable for each unit.}
 
-\item{trt}{Si \code{y} es un modelo, corresponde a la columna que indica los
-tratamientos. Si \code{y} es un vector, corresponde a un vector de la misma
-longitud que \code{y} con los tratamientos para cada unidad.}
+\item{trt}{If \code{y} is a model, it corresponds to the column indicating the
+treatments. If \code{y} is a vector, it's a vector of the same length as \code{y}
+with the treatments for each unit.}
 
-\item{alpha}{Valor equivalente a 0.05 o 0.01, correspondiente al nivel
-de significación del test. Por defecto toma el valor 0.05.}
+\item{alpha}{Value equivalent to 0.05 or 0.01, corresponding to the
+significance level of the test. The default value is 0.05.}
 
-\item{show_plot}{Valor logico indicando si debe graficarse el dendrograma
-construido o no.}
+\item{show_plot}{Logical value indicating whether the constructed dendrogram
+should be plotted or not.}
 
-\item{console}{Valor logico indicando si deben imprimirse los resultados en
-consola o no.}
+\item{console}{Logical value indicating whether the results should be printed
+on the console or not.}
 
-\item{abline_options}{Lista con argumentos opcionales para la linea
-del dendograma.}
+\item{abline_options}{List with optional arguments for the line in the
+dendrogram.}
 
-\item{...}{Argumentos opcionales para la funcion \code{plot()}.}
+\item{...}{Optional arguments for the \code{plot()} function.}
 }
 \value{
-Una lista con tres objetos \code{data.frame}:
-\item{estadisticas}{\code{data.frame} con estadisticas resumen segun tratamiento.}
-\item{grupos}{\code{data.frame} indicando el grupo al que es asignado cada
-tratamiento.}
-\item{parametros}{\code{data.frame} con los valores utilizados para el test.
-\code{tratamientos} es el numero total de tratamientos, \code{alpha} es el nivel de
-significación utilizado, \code{c} es el criterio de corte (indica la altura
-de la linea horizontal del dendrograma), \code{q} es el cuantil 1-alpha de la
-distribucion de Q (distancia del nodo raiz) bajo la hipotesis nula y
-\code{SEM} es una estimacion del error estandar de la media.}
+A list with three \code{data.frame}:
+\item{stats}{\code{data.frame} containing summary statistics by treatment.}
+\item{groups}{data.frame indicating the group to which each treatment is
+assigned.}
+\item{parameters}{\code{data.frame} with the values used for the test.
+\code{treatments} is the total number of treatments, \code{alpha} is the
+significance level used, \code{c} is the cut-off criterion for the dendrogram
+(the height of the horizontal line of the dendrogram), \code{q} is the 1-alpha
+quantile of the distribution of Q (distance from the root node) under the
+null hypothesis and \code{SEM} SEM is an estimate of the standard error of the
+mean.}
 }
 \description{
-Prueba de Di Rienzo, Guzmán y Casanoves para comparaciones múltiples.
-Implementa un método basado en clusters para identificar grupos de medias no
-homogéneas.
+Di Rienzo, Guzman and Casanoves test for multiple comparisons.
+Implements a cluster-based method for identifying groups of nonhomogeneous
+means.
 }
 \examples{
 data("PlantGrowth")
-# Utilizando vectores -------------------------------------------------------
-pesos <- PlantGrowth$weight
-tratamientos <- PlantGrowth$group
-dgc_test(y = pesos, trt = tratamientos, show_plot = FALSE)
-# Utilizando un modelo ------------------------------------------------------
-modelo <- lm(pesos ~ tratamientos)
-dgc_test(y = modelo, trt = "tratamientos", show_plot = FALSE)
+# Using vectors -------------------------------------------------------
+weights <- PlantGrowth$weight
+treatments <- PlantGrowth$group
+dgc_test(y = weights, trt = treatments, show_plot = FALSE)
+# Using a model ------------------------------------------------------
+model <- lm(weights ~ treatments)
+dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 }
 \references{
 Di Rienzo, J.A., Guzmán, A.W., Casanoves, F. (2002): A multiple

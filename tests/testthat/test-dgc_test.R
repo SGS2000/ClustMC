@@ -14,10 +14,10 @@ test_that("se detecta alpha incorrecto", {
 test_that("se muestran corectamente las alertas", {
   expect_no_message(dgc_test(PlantGrowth$weight, PlantGrowth$group, alpha = 0.05))
   expect_message(dgc_test(PlantGrowth$weight, PlantGrowth$group, alpha = 0.01),
-    regexp = "Ninguna diferencia fue significativa"
+    regexp = "No differences"
   )
   expect_message(dgc_test(iris$Sepal.Length, iris$Species),
-    regexp = "Todas las diferencias"
+    regexp = "All differences"
   )
 })
 
@@ -25,16 +25,16 @@ test_that("se muestra corectamente el error por columna inexistente", {
   modelo <- lm(data = PlantGrowth, weight ~ group)
   expect_no_error(dgc_test(modelo, "group"))
   expect_error(dgc_test(modelo, "columna_inexistente"),
-    regexp = "No se encuentra la columna"
+    regexp = "The column.*cannot be found in"
   )
 })
 
 test_that("se muestran corectamente los errores por k y n", {
   expect_error(dgc_test(mtcars$mpg, mtcars$vs),
-    regexp = "al menos.*tratamientos"
+    regexp = "at least.*treatments"
   )
   expect_error(dgc_test(mtcars$mpg, mtcars$wt),
-    regexp = "al menos.*observaciones"
+    regexp = "at least.*observations"
   )
 })
 
@@ -62,25 +62,25 @@ test_that("se configuran correctamente los graficos", {
 })
 
 test_that("los returns son correctos", {
-  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$estadisticas,
+  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$stats,
     type = "list"
   )
-  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$grupos,
+  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$groups,
     type = "list"
   )
-  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$grupos[[1]],
+  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$groups[[1]],
     type = "integer"
   )
-  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parametros,
+  expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters,
     type = "list"
   )
-  expect_length(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parametros, n = 5)
-  if (length(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parametros) == 5) {
-    expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parametros[[1]],
+  expect_length(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters, n = 5)
+  if (length(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters) == 5) {
+    expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters[[1]],
       type = "integer"
     )
     for (i in 2:4) {
-      expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parametros[2:5][[i]],
+      expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters[2:5][[i]],
         type = "double"
       )
     }

@@ -6,7 +6,7 @@
 \alias{ClustMC-package}
 \title{ClustMC: Cluster Based Multiple Comparisons}
 \description{
-Pruebas de comparaciones múltiples basadas en conglomerados.
+Cluster-based multiple comparisons tests.
 }
 \seealso{
 Useful links:

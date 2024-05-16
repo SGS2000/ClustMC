@@ -39,7 +39,7 @@ de tratamiento diferentes.
 ``` r
 library(ClustMC)
 
-data("PlantGrowth")
+data(PlantGrowth)
 plants_weights <- PlantGrowth$weight
 plants_trt <- PlantGrowth$group
 
@@ -50,8 +50,8 @@ dgc_test(y = anova_model, trt = "plants_trt")
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-    #>      grupo
+    #>      group
     #> ctrl     1
     #> trt1     1
     #> trt2     2
-    #> Los tratamientos de un mismo grupo no presentan diferencias significativas
+    #> Treatments within the same group are not significantly different

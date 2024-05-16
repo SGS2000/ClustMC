@@ -18,15 +18,16 @@ buscar_q <- function(valor_n, valor_k, valor_alfa = 0.05) {
   if (valor_n > 40) {
     valor_n <- 40
   } else if (valor_n < 2) {
-    cli::cli_abort("Cada tratamiento debe tener al menos dos observaciones")
+    cli::cli_abort("Each treatment must have at least two observations.")
   }
 
   if (valor_k > 40) {
     valor_k <- 40
   } else if (valor_k < 3) {
     cli::cli_abort(paste(
-      "Debe haber al menos tres tratamientos, se hallaron",
-      valor_k
+      "There must be at least three treatments, but",
+      valor_k,
+      "were found."
     ))
   }
 
@@ -53,10 +54,10 @@ graficar_dendrograma_dgc <- function(dendrograma, c, abline_options, ...) {
   args <- list(...)
   plot_labels <- c("main", "sub", "xlab", "ylab")
   plot_args <- list(
-    main = "Cluster Dendogram",
-    sub = "Las diferencias por debajo de la linea no son significativas",
-    xlab = "Grupos",
-    ylab = "Distancia"
+    main = "Cluster dendrogram",
+    sub = "Differences below the line are not significant.",
+    xlab = "Groups",
+    ylab = "Distance"
   )
 
   for (label in plot_labels) {
@@ -76,54 +77,55 @@ graficar_dendrograma_dgc <- function(dendrograma, c, abline_options, ...) {
 
   # Alerta si la linea no es visible
   if (c > max(dendrograma$height)) {
-    cli::cli_alert_info("Ninguna diferencia fue significativa, la linea podria no mostrarse")
+    cli::cli_alert_info("No differences were significant, the line may not be displayed.")
   } else if (c < min(dendrograma$height)) {
-    cli::cli_alert_info("Todas las diferencias fueron significativas, la linea podria no mostrarse")
+    cli::cli_alert_info("All differences were significant, the line may not be displayed.")
   }
 }
 
-#' Test DGC
+#' DGC Test
 #'
-#' Prueba de Di Rienzo, Guzmán y Casanoves para comparaciones múltiples.
-#' Implementa un método basado en clusters para identificar grupos de medias no
-#' homogéneas.
+#' Di Rienzo, Guzman and Casanoves test for multiple comparisons.
+#' Implements a cluster-based method for identifying groups of nonhomogeneous
+#' means.
 #'
-#' @param y O bien un modelo (creado con `lm()` o `aov()`) o bien un vector
-#'    numerico con los valores de la variable respuesta para cada unidad.
-#' @param trt Si `y` es un modelo, corresponde a la columna que indica los
-#'    tratamientos. Si `y` es un vector, corresponde a un vector de la misma
-#'    longitud que `y` con los tratamientos para cada unidad.
-#' @param alpha Valor equivalente a 0.05 o 0.01, correspondiente al nivel
-#'    de significación del test. Por defecto toma el valor 0.05.
-#' @param show_plot Valor logico indicando si debe graficarse el dendrograma
-#'    construido o no.
-#' @param console Valor logico indicando si deben imprimirse los resultados en
-#'    consola o no.
-#' @param abline_options Lista con argumentos opcionales para la linea
-#'    del dendograma.
-#' @param ... Argumentos opcionales para la funcion `plot()`.
+#' @param y Either a model (created with `lm()` o `aov()`) or a numerical vector
+#'    with the values of the response variable for each unit.
+#' @param trt If `y` is a model, it corresponds to the column indicating the
+#'    treatments. If `y` is a vector, it's a vector of the same length as `y`
+#'    with the treatments for each unit.
+#' @param alpha Value equivalent to 0.05 or 0.01, corresponding to the
+#'    significance level of the test. The default value is 0.05.
+#' @param show_plot Logical value indicating whether the constructed dendrogram
+#'    should be plotted or not.
+#' @param console Logical value indicating whether the results should be printed
+#'    on the console or not.
+#' @param abline_options List with optional arguments for the line in the
+#'    dendrogram.
+#' @param ... Optional arguments for the `plot()` function.
 #'
-#' @returns Una lista con tres objetos `data.frame`:
-#'    \item{estadisticas}{`data.frame` con estadisticas resumen segun tratamiento.}
-#'    \item{grupos}{`data.frame` indicando el grupo al que es asignado cada
-#'    tratamiento.}
-#'    \item{parametros}{`data.frame` con los valores utilizados para el test.
-#'    `tratamientos` es el numero total de tratamientos, `alpha` es el nivel de
-#'    significación utilizado, `c` es el criterio de corte (indica la altura
-#'    de la linea horizontal del dendrograma), `q` es el cuantil 1-alpha de la
-#'    distribucion de Q (distancia del nodo raiz) bajo la hipotesis nula y
-#'    `SEM` es una estimacion del error estandar de la media.}
+#' @returns A list with three `data.frame`:
+#'    \item{stats}{`data.frame` containing summary statistics by treatment.}
+#'    \item{groups}{data.frame indicating the group to which each treatment is
+#'    assigned.}
+#'    \item{parameters}{`data.frame` with the values used for the test.
+#'    `treatments` is the total number of treatments, `alpha` is the
+#'    significance level used, `c` is the cut-off criterion for the dendrogram
+#'    (the height of the horizontal line of the dendrogram), `q` is the 1-alpha
+#'    quantile of the distribution of Q (distance from the root node) under the
+#'    null hypothesis and `SEM` SEM is an estimate of the standard error of the
+#'    mean.}
 #' @export
 #'
 #' @examples
 #' data("PlantGrowth")
-#' # Utilizando vectores -------------------------------------------------------
-#' pesos <- PlantGrowth$weight
-#' tratamientos <- PlantGrowth$group
-#' dgc_test(y = pesos, trt = tratamientos, show_plot = FALSE)
-#' # Utilizando un modelo ------------------------------------------------------
-#' modelo <- lm(pesos ~ tratamientos)
-#' dgc_test(y = modelo, trt = "tratamientos", show_plot = FALSE)
+#' # Using vectors -------------------------------------------------------
+#' weights <- PlantGrowth$weight
+#' treatments <- PlantGrowth$group
+#' dgc_test(y = weights, trt = treatments, show_plot = FALSE)
+#' # Using a model ------------------------------------------------------
+#' model <- lm(weights ~ treatments)
+#' dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 #' @references Di Rienzo, J.A., Guzmán, A.W., Casanoves, F. (2002): A multiple
 #' comparisons method based on the distribution of the root node distance of a
 #' binary tree. J. Agr.Biol. Environ. Stat. 7: 1-14.
@@ -139,8 +141,8 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = T, console = T,
     # `trt` debe ser el nombre de una columna
     if (length(colnames(y$model)[which(colnames(y$model) == grupos)]) != 1) {
       cli::cli_abort(paste0(
-        "No se encuentra la columna '", trt,
-        "' en `y`"
+        "The column '", trt,
+        "' cannot be found in `y`"
       ))
     }
   }
@@ -178,8 +180,8 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = T, console = T,
   # `alpha` debe tener un valor apropiado para calcular `Q`
   if (alpha != 0.05 & alpha != 0.01) {
     cli::cli_warn(
-      paste0("`alpha` debe ser 0.05 o 0.01", ", no '", alpha, "'", ". Se utiliza
-                  alpha = 0.05 por defecto.")
+      paste0("`alpha` must be either 0.05 o 0.01", ", not '", alpha, "'", ".
+             alpha = 0.05 will be used by default.")
     )
     alpha <- 0.05
   }
@@ -203,17 +205,17 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = T, console = T,
   # Listas para return
   estadisticas <- as.data.frame(datos[order(datos$media), ])
   grupos <- procs::proc_sort(as.data.frame(stats::cutree(dendrograma, h = valor_c)))
-  colnames(grupos) <- "grupo"
+  colnames(grupos) <- "group"
   parametros <- data.frame(
-    "tratamientos" = k, "alpha" = alpha,
+    "treatments" = k, "alpha" = alpha,
     "c" = valor_c, "q" = valor_q, "SEM" = sqrt(MSE / n)
   )
 
   if (console) {
     print(grupos)
-    cat("Los tratamientos de un mismo grupo no presentan diferencias significativas\n")
+    cat("Treatments within the same group are not significantly different\n")
   }
 
-  output <- list("estadisticas" = estadisticas, "grupos" = grupos, "parametros" = parametros)
+  output <- list("stats" = estadisticas, "groups" = grupos, "parameters" = parametros)
   invisible(output)
 }
