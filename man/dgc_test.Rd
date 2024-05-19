@@ -2,9 +2,17 @@
 % Please edit documentation in R/dgc.R
 \name{dgc_test}
 \alias{dgc_test}
-\title{DGC Test}
+\title{Di Rienzo, Guzman and Casanoves test for multiple comparisons}
 \usage{
-dgc_test(y, trt, alpha = 0.05, show_plot = T, console = T, abline_options, ...)
+dgc_test(
+  y,
+  trt,
+  alpha = 0.05,
+  show_plot = TRUE,
+  console = TRUE,
+  abline_options,
+  ...
+)
 }
 \arguments{
 \item{y}{Either a model (created with \code{lm()} o \code{aov()}) or a numerical vector
@@ -23,7 +31,7 @@ should be plotted or not.}
 \item{console}{Logical value indicating whether the results should be printed
 on the console or not.}
 
-\item{abline_options}{List with optional arguments for the line in the
+\item{abline_options}{\code{list} with optional arguments for the line in the
 dendrogram.}
 
 \item{...}{Optional arguments for the \code{plot()} function.}
@@ -42,7 +50,7 @@ null hypothesis and \code{SEM} SEM is an estimate of the standard error of the
 mean.}
 }
 \description{
-Di Rienzo, Guzman and Casanoves test for multiple comparisons.
+Di Rienzo, Guzman and Casanoves (DGC) test for multiple comparisons.
 Implements a cluster-based method for identifying groups of nonhomogeneous
 means.
 }
@@ -57,7 +65,7 @@ model <- lm(weights ~ treatments)
 dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 }
 \references{
-Di Rienzo, J.A., Guzmán, A.W., Casanoves, F. (2002): A multiple
+Di Rienzo, J.A., Guzman, A.W., Casanoves, F. (2002): A multiple
 comparisons method based on the distribution of the root node distance of a
 binary tree. J. Agr.Biol. Environ. Stat. 7: 1-14.
 }
