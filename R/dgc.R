@@ -4,10 +4,10 @@
 #' Implements a cluster-based method for identifying groups of nonhomogeneous
 #' means.
 #'
-#' @param y Either a model (created with `lm()` o `aov()`) or a numerical vector
-#'    with the values of the response variable for each unit.
-#' @param trt If `y` is a model, it corresponds to the column indicating the
-#'    treatments. If `y` is a vector, it's a vector of the same length as `y`
+#' @param y Either a model (created with `lm()` or `aov()`) or a numerical
+#'    vector with the values of the response variable for each unit.
+#' @param trt If `y` is a model, a string with the name of the column containing
+#'    the treatments. If `y` is a vector, a vector of the same length as `y`
 #'    with the treatments for each unit.
 #' @param alpha Value equivalent to 0.05 or 0.01, corresponding to the
 #'    significance level of the test. The default value is 0.05.
@@ -21,14 +21,14 @@
 #'
 #' @returns A list with three `data.frame`:
 #'    \item{stats}{`data.frame` containing summary statistics by treatment.}
-#'    \item{groups}{data.frame indicating the group to which each treatment is
+#'    \item{groups}{`data.frame` indicating the group to which each treatment is
 #'    assigned.}
 #'    \item{parameters}{`data.frame` with the values used for the test.
 #'    `treatments` is the total number of treatments, `alpha` is the
 #'    significance level used, `c` is the cut-off criterion for the dendrogram
-#'    (the height of the horizontal line of the dendrogram), `q` is the 1-alpha
+#'    (the height of the horizontal line on the dendrogram), `q` is the 1-alpha
 #'    quantile of the distribution of Q (distance from the root node) under the
-#'    null hypothesis and `SEM` SEM is an estimate of the standard error of the
+#'    null hypothesis and `SEM` is an estimate of the standard error of the
 #'    mean.}
 #' @export
 #'

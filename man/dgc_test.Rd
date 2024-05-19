@@ -15,11 +15,11 @@ dgc_test(
 )
 }
 \arguments{
-\item{y}{Either a model (created with \code{lm()} o \code{aov()}) or a numerical vector
-with the values of the response variable for each unit.}
+\item{y}{Either a model (created with \code{lm()} or \code{aov()}) or a numerical
+vector with the values of the response variable for each unit.}
 
-\item{trt}{If \code{y} is a model, it corresponds to the column indicating the
-treatments. If \code{y} is a vector, it's a vector of the same length as \code{y}
+\item{trt}{If \code{y} is a model, a string with the name of the column containing
+the treatments. If \code{y} is a vector, a vector of the same length as \code{y}
 with the treatments for each unit.}
 
 \item{alpha}{Value equivalent to 0.05 or 0.01, corresponding to the
@@ -39,14 +39,14 @@ dendrogram.}
 \value{
 A list with three \code{data.frame}:
 \item{stats}{\code{data.frame} containing summary statistics by treatment.}
-\item{groups}{data.frame indicating the group to which each treatment is
+\item{groups}{\code{data.frame} indicating the group to which each treatment is
 assigned.}
 \item{parameters}{\code{data.frame} with the values used for the test.
 \code{treatments} is the total number of treatments, \code{alpha} is the
 significance level used, \code{c} is the cut-off criterion for the dendrogram
-(the height of the horizontal line of the dendrogram), \code{q} is the 1-alpha
+(the height of the horizontal line on the dendrogram), \code{q} is the 1-alpha
 quantile of the distribution of Q (distance from the root node) under the
-null hypothesis and \code{SEM} SEM is an estimate of the standard error of the
+null hypothesis and \code{SEM} is an estimate of the standard error of the
 mean.}
 }
 \description{
