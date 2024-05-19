@@ -74,13 +74,13 @@ means.</p>
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>y</dt>
-<dd><p>Either a model (created with <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code> o <code><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov()</a></code>) or a numerical vector
-with the values of the response variable for each unit.</p></dd>
+<dd><p>Either a model (created with <code><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm()</a></code> or <code><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov()</a></code>) or a numerical
+vector with the values of the response variable for each unit.</p></dd>
 
 
 <dt>trt</dt>
-<dd><p>If <code>y</code> is a model, it corresponds to the column indicating the
-treatments. If <code>y</code> is a vector, it's a vector of the same length as <code>y</code>
+<dd><p>If <code>y</code> is a model, a string with the name of the column containing
+the treatments. If <code>y</code> is a vector, a vector of the same length as <code>y</code>
 with the treatments for each unit.</p></dd>
 
 
@@ -117,16 +117,16 @@ dendrogram.</p></dd>
 <dd><p><code>data.frame</code> containing summary statistics by treatment.</p></dd>
 
 <dt>groups</dt>
-<dd><p>data.frame indicating the group to which each treatment is
+<dd><p><code>data.frame</code> indicating the group to which each treatment is
 assigned.</p></dd>
 
 <dt>parameters</dt>
 <dd><p><code>data.frame</code> with the values used for the test.
 <code>treatments</code> is the total number of treatments, <code>alpha</code> is the
 significance level used, <code>c</code> is the cut-off criterion for the dendrogram
-(the height of the horizontal line of the dendrogram), <code>q</code> is the 1-alpha
+(the height of the horizontal line on the dendrogram), <code>q</code> is the 1-alpha
 quantile of the distribution of Q (distance from the root node) under the
-null hypothesis and <code>SEM</code> SEM is an estimate of the standard error of the
+null hypothesis and <code>SEM</code> is an estimate of the standard error of the
 mean.</p></dd>
 
 </dl></div>
