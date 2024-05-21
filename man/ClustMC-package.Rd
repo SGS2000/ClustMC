@@ -4,9 +4,9 @@
 \name{ClustMC-package}
 \alias{ClustMC}
 \alias{ClustMC-package}
-\title{ClustMC: Cluster Based Multiple Comparisons}
+\title{ClustMC: Cluster-Based Multiple Comparisons}
 \description{
-Cluster-based multiple comparisons tests.
+Implementats cluster-based multiple comparisons tests.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Santiago Garcia Sanchez \email{santiagoesquel@gmail.com}
+\strong{Maintainer}: Santiago Garcia Sanchez \email{santiagoesquel@gmail.com} [copyright holder]
 
 }
 \keyword{internal}

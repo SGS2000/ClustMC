@@ -11,7 +11,7 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
-ClustMC implements cluster based multiple comparisons tests.
+ClustMC implements cluster-based multiple comparisons tests.
 
 ClustMC implementa pruebas de comparaciones múltiples basadas en
 conglomerados.

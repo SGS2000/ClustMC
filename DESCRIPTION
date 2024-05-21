@@ -1,9 +1,9 @@
 Package: ClustMC
-Title: Cluster Based Multiple Comparisons
+Title: Cluster-Based Multiple Comparisons
 Version: 0.0.0.9000
 Authors@R: 
-    person("Santiago", "Garcia Sanchez", , "santiagoesquel@gmail.com", role = c("aut", "cre"))
-Description: Cluster-based multiple comparisons tests.
+    person("Santiago", "Garcia Sanchez", , "santiagoesquel@gmail.com", role = c("aut", "cre", "cph"))
+Description: Implements cluster-based multiple comparisons tests.
 License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)
