@@ -6,7 +6,7 @@
 \alias{ClustMC-package}
 \title{ClustMC: Cluster-Based Multiple Comparisons}
 \description{
-Implementats cluster-based multiple comparisons tests.
+Implements cluster-based multiple comparisons tests.
 }
 \seealso{
 Useful links:
