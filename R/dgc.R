@@ -55,9 +55,7 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
     group <- trt
     # `trt` must be the name of a column
     if (length(colnames(y$model)[which(colnames(y$model) == group)]) != 1) {
-      cli::cli_abort(
-        "Column `{trt}` can't be found in {.var y}."
-      )
+      cli::cli_abort("Column `{trt}` can't be found in {.var y}.")
     }
   }
 
@@ -87,7 +85,7 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   if (length(unique(dataset$r)) == 1) {
     n <- unique(dataset$r)
   } else {
-    # If groups are unequal, harmonic mean is applied.
+    # If groups have unequal sample sizes, harmonic mean is applied.
     n <- round(psych::harmonic.mean(dataset$r))
   }
 
@@ -124,8 +122,8 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
                              )))
   colnames(groups) <- "group"
   parameters <- data.frame(
-    "treatments" = k, "alpha" = alpha,
-    "c" = value_c, "q" = value_q, "SEM" = sqrt(mse / n)
+    "treatments" = k, "alpha" = alpha, "c" = value_c, "q" = value_q,
+    "SEM" = sqrt(mse / n)
   )
 
   if (console) {
