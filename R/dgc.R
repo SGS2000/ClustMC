@@ -2,7 +2,11 @@
 #'
 #' Di Rienzo, Guzman and Casanoves (DGC) test for multiple comparisons.
 #' Implements a cluster-based method for identifying groups of nonhomogeneous
-#' means.
+#' means. Average linkage clustering is applied to a distance matrix obtained
+#' from the sample means. The distribution of \eqn{Q} (distance between the
+#' source and the root node of the tree) is used to build a test with a
+#' significance level of \eqn{\alpha}. Groups whose means join above \eqn{c} (
+#' the \eqn{\alpha}-level cut-off criterion) are statistically different.
 #'
 #' @param y Either a model (created with `lm()` or `aov()`) or a numerical
 #'    vector with the values of the response variable for each unit.
@@ -26,10 +30,12 @@
 #'    \item{parameters}{`data.frame` with the values used for the test.
 #'    `treatments` is the total number of treatments, `alpha` is the
 #'    significance level used, `c` is the cut-off criterion for the dendrogram
-#'    (the height of the horizontal line on the dendrogram), `q` is the 1-alpha
-#'    quantile of the distribution of Q (distance from the root node) under the
-#'    null hypothesis and `SEM` is an estimate of the standard error of the
-#'    mean.}
+#'    (the height of the horizontal line on the dendrogram), `q` is the
+#'    \eqn{1 - \alpha} quantile of the distribution of \eqn{Q} (distance from
+#'    the root node) under the null hypothesis and `SEM` is an estimate of the
+#'    standard error of the mean.}
+#'    \item{dendrogram_data}{object of class hclust with data used to build the
+#'    dendrogram.}
 #' @export
 #'
 #' @examples
@@ -38,7 +44,7 @@
 #' weights <- PlantGrowth$weight
 #' treatments <- PlantGrowth$group
 #' dgc_test(y = weights, trt = treatments, show_plot = FALSE)
-#' # Using a model ------------------------------------------------------
+#' # Using a model -------------------------------------------------------
 #' model <- lm(weights ~ treatments)
 #' dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 #' @references Di Rienzo, J.A., Guzman, A.W., Casanoves, F. (2002): A multiple
@@ -132,8 +138,8 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   }
 
   output <- list(
-    "stats" = stats, "groups" = groups,
-    "parameters" = parameters
+    "stats" = stats, "groups" = groups, "parameters" = parameters,
+    "dendrogram_data" = dendrogram
   )
   invisible(output)
 }

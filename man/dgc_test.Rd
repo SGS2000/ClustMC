@@ -44,15 +44,21 @@ assigned.}
 \item{parameters}{\code{data.frame} with the values used for the test.
 \code{treatments} is the total number of treatments, \code{alpha} is the
 significance level used, \code{c} is the cut-off criterion for the dendrogram
-(the height of the horizontal line on the dendrogram), \code{q} is the 1-alpha
-quantile of the distribution of Q (distance from the root node) under the
-null hypothesis and \code{SEM} is an estimate of the standard error of the
-mean.}
+(the height of the horizontal line on the dendrogram), \code{q} is the
+\eqn{1 - \alpha} quantile of the distribution of \eqn{Q} (distance from
+the root node) under the null hypothesis and \code{SEM} is an estimate of the
+standard error of the mean.}
+\item{dendrogram_data}{object of class hclust with data used to build the
+dendrogram.}
 }
 \description{
 Di Rienzo, Guzman and Casanoves (DGC) test for multiple comparisons.
 Implements a cluster-based method for identifying groups of nonhomogeneous
-means.
+means. Average linkage clustering is applied to a distance matrix obtained
+from the sample means. The distribution of \eqn{Q} (distance between the
+source and the root node of the tree) is used to build a test with a
+significance level of \eqn{\alpha}. Groups whose means join above \eqn{c} (
+the \eqn{\alpha}-level cut-off criterion) are statistically different.
 }
 \examples{
 data("PlantGrowth")
@@ -60,7 +66,7 @@ data("PlantGrowth")
 weights <- PlantGrowth$weight
 treatments <- PlantGrowth$group
 dgc_test(y = weights, trt = treatments, show_plot = FALSE)
-# Using a model ------------------------------------------------------
+# Using a model -------------------------------------------------------
 model <- lm(weights ~ treatments)
 dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 }

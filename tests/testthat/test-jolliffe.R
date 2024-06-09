@@ -130,6 +130,7 @@ test_that("returns are correct", {
     PlantGrowth$weight,
     PlantGrowth$group
   )$parameters, n = 6)
+
   if (length(
     jolliffe_test(PlantGrowth$weight, PlantGrowth$group)$parameters
   ) == 6) {
@@ -150,4 +151,9 @@ test_that("returns are correct", {
       )
     }
   }
+
+  expect_s3_class(
+    jolliffe_test(PlantGrowth$weight, PlantGrowth$group)$dendrogram_data,
+    "hclust"
+  )
 })

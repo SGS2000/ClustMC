@@ -36,6 +36,8 @@
 #'    treatments or the harmonic mean of said repetitions, `MSE` is the mean
 #'    standard error from the ANOVA table and `SEM` is an estimate of the
 #'    standard error of the mean.}
+#'    \item{dendrogram_data}{object of class hclust with data used to build the
+#'    dendrogram.}
 #' @export
 #'
 #' @examples
@@ -178,7 +180,8 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
   }
 
   output <- list(
-    "stats" = stats, "groups" = groups, "parameters" = parameters
+    "stats" = stats, "groups" = groups, "parameters" = parameters,
+    "dendrogram_data" = dendrogram
   )
   invisible(output)
 }

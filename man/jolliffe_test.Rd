@@ -52,6 +52,8 @@ significance level used, \code{n} is either the number of repetitions for all
 treatments or the harmonic mean of said repetitions, \code{MSE} is the mean
 standard error from the ANOVA table and \code{SEM} is an estimate of the
 standard error of the mean.}
+\item{dendrogram_data}{object of class hclust with data used to build the
+dendrogram.}
 }
 \description{
 I.T. Jolliffe test for multiple comparisons.

@@ -93,6 +93,7 @@ test_that("returns are correct", {
     PlantGrowth$weight,
     PlantGrowth$group
   )$parameters, n = 5)
+
   if (length(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters) == 5) {
     expect_type(dgc_test(PlantGrowth$weight, PlantGrowth$group)$parameters[[1]],
       type = "integer"
@@ -104,4 +105,9 @@ test_that("returns are correct", {
       )
     }
   }
+
+  expect_s3_class(
+    dgc_test(PlantGrowth$weight, PlantGrowth$group)$dendrogram_data,
+    "hclust"
+  )
 })
