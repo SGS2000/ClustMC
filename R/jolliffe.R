@@ -36,8 +36,8 @@
 #'    treatments or the harmonic mean of said repetitions, `MSE` is the mean
 #'    standard error from the ANOVA table and `SEM` is an estimate of the
 #'    standard error of the mean.}
-#'    \item{dendrogram_data}{object of class hclust with data used to build the
-#'    dendrogram.}
+#'    \item{dendrogram_data}{object of class `hclust` with data used to build
+#'    the dendrogram.}
 #' @export
 #'
 #' @examples
@@ -49,9 +49,9 @@
 #' # Using a model -------------------------------------------------------
 #' model <- lm(weights ~ treatments)
 #' jolliffe_test(y = model, trt = "treatments", alpha = 0.1, show_plot = FALSE)
-#' @references Jolliffe, I. T. (1975),
-#' "Cluster Analysis as a Multiple Comparison Method," Applied Statistics,
-#' Proceedings of Conference at Dalhousie University, Halifax, 159-168.
+#' @references Jolliffe, I. T. (1975). Cluster analysis as a multiple comparison
+#' method. \emph{Applied Statistics: Proceedings of Conference at Dalhousie
+#' University, Halifax}, 159-168.
 #' @author Santiago Garcia Sanchez
 # nolint start: cyclocomp_linter.
 jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
@@ -165,9 +165,9 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
 
   # Formats data for return values.
   stats <- as.data.frame(dataset[order(dataset$mean), ])
-  groups <- procs::proc_sort(as.data.frame(stats::cutree(dendrogram,
-                               h = 1 - alpha
-                             )))
+  groups <- procs::proc_sort(as.data.frame(
+    stats::cutree(dendrogram, h = 1 - alpha)
+  ))
   colnames(groups) <- "group"
   parameters <- data.frame(
     "treatments" = nrow(dataset), "n" = n, "alpha" = alpha, "df" = df_tukey,

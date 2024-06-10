@@ -52,8 +52,8 @@ significance level used, \code{n} is either the number of repetitions for all
 treatments or the harmonic mean of said repetitions, \code{MSE} is the mean
 standard error from the ANOVA table and \code{SEM} is an estimate of the
 standard error of the mean.}
-\item{dendrogram_data}{object of class hclust with data used to build the
-dendrogram.}
+\item{dendrogram_data}{object of class \code{hclust} with data used to build
+the dendrogram.}
 }
 \description{
 I.T. Jolliffe test for multiple comparisons.
@@ -75,9 +75,9 @@ model <- lm(weights ~ treatments)
 jolliffe_test(y = model, trt = "treatments", alpha = 0.1, show_plot = FALSE)
 }
 \references{
-Jolliffe, I. T. (1975),
-"Cluster Analysis as a Multiple Comparison Method," Applied Statistics,
-Proceedings of Conference at Dalhousie University, Halifax, 159-168.
+Jolliffe, I. T. (1975). Cluster analysis as a multiple comparison
+method. \emph{Applied Statistics: Proceedings of Conference at Dalhousie
+University, Halifax}, 159-168.
 }
 \author{
 Santiago Garcia Sanchez

@@ -5,8 +5,9 @@
 #' means. Average linkage clustering is applied to a distance matrix obtained
 #' from the sample means. The distribution of \eqn{Q} (distance between the
 #' source and the root node of the tree) is used to build a test with a
-#' significance level of \eqn{\alpha}. Groups whose means join above \eqn{c} (
-#' the \eqn{\alpha}-level cut-off criterion) are statistically different.
+#' significance level of \eqn{\alpha}. Groups whose means join above
+#' \eqn{c} (the \eqn{\alpha}-level cut-off criterion) are statistically
+#' different.
 #'
 #' @param y Either a model (created with `lm()` or `aov()`) or a numerical
 #'    vector with the values of the response variable for each unit.
@@ -34,8 +35,8 @@
 #'    \eqn{1 - \alpha} quantile of the distribution of \eqn{Q} (distance from
 #'    the root node) under the null hypothesis and `SEM` is an estimate of the
 #'    standard error of the mean.}
-#'    \item{dendrogram_data}{object of class hclust with data used to build the
-#'    dendrogram.}
+#'    \item{dendrogram_data}{object of class `hclust` with data used to build
+#'    the dendrogram.}
 #' @export
 #'
 #' @examples
@@ -47,9 +48,10 @@
 #' # Using a model -------------------------------------------------------
 #' model <- lm(weights ~ treatments)
 #' dgc_test(y = model, trt = "treatments", show_plot = FALSE)
-#' @references Di Rienzo, J.A., Guzman, A.W., Casanoves, F. (2002): A multiple
-#' comparisons method based on the distribution of the root node distance of a
-#' binary tree. J. Agr.Biol. Environ. Stat. 7: 1-14.
+#' @references Di Rienzo, J. A., Guzmán, A. W., & Casanoves, F. (2002). A
+#' Multiple-Comparisons Method Based on the Distribution of the Root Node
+#' Distance of a Binary Tree. \emph{Journal of Agricultural, Biological, and
+#' Environmental Statistics, 7}(2), 129–142. http://www.jstor.org/stable/1400690
 #' @author Santiago Garcia Sanchez
 dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
                      abline_options, ...) {
@@ -123,9 +125,9 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
 
   # Formats data for return values.
   stats <- as.data.frame(dataset[order(dataset$mean), ])
-  groups <- procs::proc_sort(as.data.frame(stats::cutree(dendrogram,
-                               h = value_c
-                             )))
+  groups <- procs::proc_sort(as.data.frame(
+    stats::cutree(dendrogram, h = value_c)
+  ))
   colnames(groups) <- "group"
   parameters <- data.frame(
     "treatments" = k, "alpha" = alpha, "c" = value_c, "q" = value_q,
