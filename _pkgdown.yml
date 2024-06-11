@@ -12,3 +12,12 @@ navbar:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
       aria-label: LinkedIn
+
+reference:
+- title: Tests
+  desc:  Cluster-based multiple comparisons tests.
+- contents:
+  - ends_with("_test")
+- title: Datasets
+- contents:
+  - has_keyword("datasets")
