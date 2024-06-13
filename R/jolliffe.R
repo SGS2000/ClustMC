@@ -2,7 +2,7 @@
 #'
 #' I.T. Jolliffe test for multiple comparisons.
 #' Implements a cluster-based alternative closely linked to the
-#' Student–Newman-Keuls multiple comparison method. Single-linkage cluster
+#' Student-Newman-Keuls multiple comparison method. Single-linkage cluster
 #' analysis is applied, using the p-values obtained with the SNK test for
 #' pairwise mean comparison as a similarity measure. Groups whose means join
 #' beyond \eqn{1 - \alpha} are statistically different. Alternatively, complete

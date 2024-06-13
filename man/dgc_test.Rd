@@ -72,10 +72,11 @@ model <- lm(weights ~ treatments)
 dgc_test(y = model, trt = "treatments", show_plot = FALSE)
 }
 \references{
-Di Rienzo, J. A., Guzmán, A. W., & Casanoves, F. (2002). A
+Di Rienzo, J. A., Guzman, A. W., & Casanoves, F. (2002). A
 Multiple-Comparisons Method Based on the Distribution of the Root Node
 Distance of a Binary Tree. \emph{Journal of Agricultural, Biological, and
-Environmental Statistics, 7}(2), 129–142. http://www.jstor.org/stable/1400690
+Environmental Statistics, 7}(2), 129-142.
+\url{http://www.jstor.org/stable/1400690}
 }
 \author{
 Santiago Garcia Sanchez
