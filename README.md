@@ -17,17 +17,17 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 All tests included in the package share similar features:
 
 - Inspired by the [agricolae](https://myaseen208.com/agricolae/)
-  package, it is possible work with either two vectors (one for the
+  package, it is possible to work with either two vectors (one for the
   response variable and one for the treatments) or a model (created with
   `lm()` or `aov()`). In the latter case, the name of the variable with
-  the treatments must be indicated.
+  the treatments must be specified.
 - After applying the corresponding method, a table containing the
   treatments and their group (indicated by a number) is printed to the
   console. Treatments within the same group are not significantly
-  different. The user can choose not not display the table.
+  different. The user can choose not to display the table.
 - By default, a dendrogram is plotted. The dendrogram can be customized
   with any argument passed to the `plot()` function. In addition, the
-  data used to create it is made available to the user, so it is
+  data used to create the plot is made available to the user, so it is
   possible to use other libraries such as ggplot2.
 
 ------------------------------------------------------------------------
@@ -179,9 +179,9 @@ dgc_test(
 
 ------------------------------------------------------------------------
 
-🇬🇧 Alternatively, the `hclust` object that creates the dendrogram is
-made available to the user, which allows other libraries to be used. In
-the following example, the
+🇬🇧 Alternatively, the `hclust` object responsible for creating the
+dendrogram is provided to the user, which allows other libraries to be
+used. In the following example, the
 [ggdendro](https://andrie.github.io/ggdendro/) package is used to plot
 the dendrogram with ggplot2.
 
