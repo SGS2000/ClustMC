@@ -108,9 +108,9 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
     n <- psych::harmonic.mean(dataset$r)
   }
 
-  mse <- stats::anova(y)[3][[1]][length(stats::anova(y)[3][[1]])]
+  mse <- stats::anova(y)["Residuals", "Mean Sq"]
   sample_s <- sqrt(mse / n)
-  df_tukey <- stats::anova(y)[1][[1]][length(stats::anova(y)[1][[1]])]
+  df_tukey <- stats::anova(y)["Residuals", "Df"]
 
   # Cannot divide by zero
   if (df_tukey == 0) {

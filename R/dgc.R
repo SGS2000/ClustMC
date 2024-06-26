@@ -110,7 +110,7 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   value_q <- find_q(n, k, alpha)
 
   # The ANOVA table is constructed to obtain the MSE
-  mse <- stats::anova(y)[3][[1]][length(stats::anova(y)[3][[1]])]
+  mse <- stats::anova(y)["Residuals", "Mean Sq"]
   value_c <- value_q * sqrt(mse / n)
 
   # A matrix with the Euclidean distances is built
