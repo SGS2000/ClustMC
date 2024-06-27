@@ -60,7 +60,7 @@ The package can be installed from GitHub: / El paquete puede instalarse
 desde GitHub:
 
 ``` r
-devtools::install_github("SGS2000/ClustMC")
+remotes::install_github("SGS2000/ClustMC")
 ```
 
 ## Examples / Ejemplos
