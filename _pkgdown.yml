@@ -6,12 +6,23 @@ template:
 navbar:
   bg: primary
   structure:
+    left: [home, reference]
     right: [linkedin, github]
   components:
     linkedin:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
       aria-label: LinkedIn
+    home:
+      icon: fa-home
+      text: Home
+      href: index.html
+      aria-label: Home
+    reference:
+      icon: fa-list
+      text: Reference
+      href: reference/index.html
+      aria-label: Reference
 
 reference:
 - title: Tests
@@ -19,5 +30,6 @@ reference:
 - contents:
   - ends_with("_test")
 - title: Datasets
+  desc:  Datasets used to illustrate the tests.
 - contents:
   - has_keyword("datasets")
