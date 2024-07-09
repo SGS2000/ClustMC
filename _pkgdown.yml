@@ -1,13 +1,17 @@
 url: https://sgs2000.github.io/ClustMC/
 template:
   bootstrap: 5
-  bootswatch: flatly
+  bslib:
+    bootswatch: flatly
+    pkgdown-navbar-bg: '#7b90a4'
+    pkgdown-navbar-bg-dark: '#2d3e50'
+  light-switch: true
 
 navbar:
-  bg: primary
+  bg: dark
   structure:
-    left: [home, reference]
-    right: [linkedin, github]
+    left: [home, reference, articles]
+    right: [search, github, linkedin, lightswitch]
   components:
     linkedin:
       icon: fa-linkedin
@@ -23,6 +27,13 @@ navbar:
       text: Reference
       href: reference/index.html
       aria-label: Reference
+    articles:
+      icon: fa-book
+      text: Articles
+      aria-label: Articles
+      menu:
+        - text: "Customizing Plots"
+          href: articles/CustomPlots.html
 
 reference:
 - title: Tests

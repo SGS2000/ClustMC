@@ -57,6 +57,9 @@ remotes::install_github("SGS2000/ClustMC")
 🇪🇸 El siguiente ejemplo aplica la prueba de Di Rienzo, Guzmán y Casanoves para evaluar si existen diferencias significativas entre los rendimientos obtenidos bajo una condición de control y dos condiciones de tratamiento diferentes. En este caso, se pasan vectores como argumentos.
 
 ```{r example1}
+#| fig.alt: >
+#|   Example with dgc_test()
+
 library(ClustMC)
 
 data(PlantGrowth)
@@ -74,6 +77,9 @@ dgc_test(y = plants_weights, trt = plants_trt)
 🇪🇸 En el siguiente ejemplo, se utiliza un dataset con los resultados de un experimento de panadería. Se ajusta un modelo ANOVA con el volumen de los panes como variable respuesta y la cantidad de bromato de potasio y la variedad de trigo como variables explicativas. La prueba de Jolliffe se aplica luego para evaluar las diferencias entre las 17 variedades.
 
 ```{r example2}
+#| fig.alt: >
+#|   Example with jolliffe_test
+   
 library(ClustMC)
 
 data(bread)
@@ -83,46 +89,6 @@ jolliffe_test(y = anova_model, trt = "variety")
 ```
 
 ### Customizing plots / Personalizar gráficos
+🇬🇧 Dendrograms can be customized, using any argument available for the `plot()` function. In the case of the lines, arguments for the `abline()` function must be passed as list. For a detailed explanation and examples, check `vignette("CustomPlots")`.
 
-🇬🇧 Dendrograms can be customized, using any argument available for the `plot()` function. In the case of the lines, arguments for the `abline()` function must be passed as list.
-
-🇪🇸 Los dendrogramas pueden ser personalizados, utilizando cualquier argumento disponible para la función `plot()`. En el caso de las rectas, se debe utilizar una lista conteniendo argumentos para la función `abline()`.
-
-```{r example3}
-library(ClustMC)
-
-data(PlantGrowth)
-plants_weights <- PlantGrowth$weight
-plants_trt <- PlantGrowth$group
-
-dgc_test(
-  y = plants_weights, trt = plants_trt,
-  abline_options = list(col = "red", lty = 3, lwd = 1),
-  main = "A customized plot",
-  xlab = "Treatments",
-  col = "grey50",
-  cex = 0.75
-)
-```
-
-------------------------------------------------------------------------
-
-🇬🇧 Alternatively, the `hclust` object responsible for creating the dendrogram is provided to the user, which allows other libraries to be used. In the following example, the [ggdendro](https://andrie.github.io/ggdendro/) package is used to plot the dendrogram with ggplot2.
-
-🇪🇸 Como alternativa, el usuario tiene acceso al objeto de clase `hclust` usado por la función para crear el dendrograma, lo cual permite la aplicación de otros paquetes. En el siguiente ejemplo se recurre al paquete [ggdendro](https://andrie.github.io/ggdendro/) para graficar el dendrograma con ggplot2.
-
-
-```{r example4}
-library(ClustMC)
-library(ggplot2)
-library(ggdendro)
-
-data(bread)
-anova_model <- aov(volume ~ variety + as.factor(bromate), data = bread)
-
-test_results <- jolliffe_test(y = anova_model, trt = "variety", console = F, show_plot = F)
-
-ggdendro::ggdendrogram(test_results$dendrogram_data) +
-  geom_hline(yintercept = 0.95, colour = "blue", linetype = "dotted", linewidth = 0.75) +
-  ggtitle("SLCA dendrogram for bread baking data")
-```
+🇪🇸 Los dendrogramas pueden ser personalizados, utilizando cualquier argumento disponible para la función `plot()`. En el caso de las líneas rectas, se debe utilizar una lista conteniendo argumentos para la función `abline()`. Para ver una explicación detallada y ejemplos, revise `vignette("CustomPlots")`.
