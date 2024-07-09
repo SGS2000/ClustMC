@@ -1,39 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/404.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/index.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/ClustMC-package.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/bread.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/bss_test.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/clover.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/dgc_test.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>https://sgs2000.github.io/ClustMC/reference/jolliffe_test.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://sgs2000.github.io/ClustMC/404.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/LICENSE-text.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/LICENSE.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/articles/CustomPlots.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/articles/index.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/authors.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/index.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/ClustMC-package.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/bread.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/bss_test.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/clover.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/dgc_test.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/index.html</loc></url>
+<url><loc>https://sgs2000.github.io/ClustMC/reference/jolliffe_test.html</loc></url>
 </urlset>
+
