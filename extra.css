@@ -1,0 +1,23 @@
+/* Color version del paquete */
+.text-muted {
+    color: #ffffff !important;
+}
+
+/* Color del fondo items de navbar */
+.nav-item.active .nav-link {
+    background: RGBA(33, 37, 41, 0.1);
+}
+
+/* Color texto menues dropdown */
+.dropdown-item {
+    color: var(--bs-body-color)
+}
+
+/* Color links */
+a>code {
+    color: #18bc9c;
+}
+
+a {
+    color: rgba(24, 188, 156, var(--bs-link-opacity, 1));
+}
