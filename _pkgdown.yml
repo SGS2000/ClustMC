@@ -10,7 +10,7 @@ template:
 navbar:
   bg: dark
   structure:
-    left: [home, reference, articles]
+    left: [home, reference, articles, news]
     right: [search, github, linkedin, site, lightswitch]
   components:
     home:
@@ -30,6 +30,11 @@ navbar:
       menu:
         - text: "Customizing Plots"
           href: articles/CustomPlots.html
+    news:
+      icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+      aria-label: Changelog
     linkedin:
       icon: fa-linkedin
       href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/

@@ -1,3 +1,3 @@
-# ClustMC (development version)
+# ClustMC 0.0.0.9000
 
-* Initial CRAN submission.
+* First version
