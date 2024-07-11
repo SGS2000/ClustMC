@@ -3,7 +3,7 @@ template:
   bootstrap: 5
   bslib:
     bootswatch: flatly
-    pkgdown-navbar-bg: '#7b90a4'
+    pkgdown-navbar-bg: '#2d3e50'
     pkgdown-navbar-bg-dark: '#2d3e50'
   light-switch: true
 
@@ -11,12 +11,8 @@ navbar:
   bg: dark
   structure:
     left: [home, reference, articles]
-    right: [search, github, linkedin, lightswitch]
+    right: [search, github, linkedin, site, lightswitch]
   components:
-    linkedin:
-      icon: fa-linkedin
-      href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
-      aria-label: LinkedIn
     home:
       icon: fa-home
       text: Home
@@ -34,6 +30,14 @@ navbar:
       menu:
         - text: "Customizing Plots"
           href: articles/CustomPlots.html
+    linkedin:
+      icon: fa-linkedin
+      href: https://www.linkedin.com/in/santiago-garcia-sanchez-21b20a1a9/
+      aria-label: LinkedIn
+    site:
+      icon: fa-globe
+      href: https://sgs2000.github.io/
+      aria-label: Website
 
 reference:
 - title: Tests
