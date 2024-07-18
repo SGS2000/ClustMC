@@ -12,7 +12,10 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 <!-- badges: end -->
 
-🇬🇧 ClustMC implements cluster-based multiple comparisons tests.
+🇬🇧 ClustMC implements cluster-based multiple comparisons tests. These
+tests apply clustering techniques to group the means of different
+treatments into non-overlapping clusters, with treatments considered
+statistically different if they are in separate groups.
 
 All tests included in the package share similar features:
 
@@ -33,7 +36,10 @@ All tests included in the package share similar features:
 ------------------------------------------------------------------------
 
 🇪🇸 ClustMC implementa pruebas de comparaciones múltiples basadas en
-conglomerados.
+conglomerados. Estas pruebas aplican técnicas de *clustering* para
+agrupar las medias de los distintos tratamientos en conglomerados no
+superpuestos, considerándose los tratamientos estadísticamente
+diferentes si se encuentran en grupos separados.
 
 Todos los tests incluidos en el paquete tienen características
 similares:

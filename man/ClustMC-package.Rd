@@ -6,7 +6,7 @@
 \alias{ClustMC-package}
 \title{ClustMC: Cluster-Based Multiple Comparisons}
 \description{
-Implements cluster-based multiple comparisons tests.
+Multiple comparison techniques are typically applied following an F test from an ANOVA to decide which means are significantly different from one another. As an alternative to traditional methods, cluster analysis can be performed to group the means of different treatments into non-overlapping clusters. Treatments in different groups are considered statistically different. Several approaches have been proposed, with varying clustering methods and cut-off criteria. This package implements cluster-based multiple comparisons tests and also provides a visual representation in the form of a dendrogram.
 }
 \seealso{
 Useful links:

@@ -2,8 +2,17 @@ Package: ClustMC
 Title: Cluster-Based Multiple Comparisons
 Version: 0.0.0.9000
 Authors@R: 
-    person("Santiago", "Garcia Sanchez", , "santiagoesquel@gmail.com", role = c("aut", "cre", "cph"))
-Description: Implements cluster-based multiple comparisons tests.
+    person("Santiago", "Garcia Sanchez", , "santiagoesquel@gmail.com", 
+    role = c("aut", "cre", "cph"))
+Description: Multiple comparison techniques are typically applied following an F
+    test from an ANOVA to decide which means are significantly different from
+    one another. As an alternative to traditional methods, cluster analysis
+    can be performed to group the means of different treatments into
+    non-overlapping clusters. Treatments in different groups are considered
+    statistically different. Several approaches have been proposed, with varying
+    clustering methods and cut-off criteria. This package implements
+    cluster-based multiple comparisons tests and also provides a visual
+    representation in the form of a dendrogram.
 License: MIT + file LICENSE
 Depends: 
     R (>= 2.10)
