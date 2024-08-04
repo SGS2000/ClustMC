@@ -26,7 +26,7 @@
 #'    dendrogram.
 #' @param ... Optional arguments for the `plot()` function.
 #'
-#' @returns A list with three `data.frame`:
+#' @returns A list with three `data.frame` and one `hclust`:
 #'    \item{stats}{`data.frame` containing summary statistics by treatment.}
 #'    \item{groups}{`data.frame` indicating the group to which each treatment is
 #'    assigned.}

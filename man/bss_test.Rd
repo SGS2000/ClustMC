@@ -37,7 +37,7 @@ dendrogram.}
 \item{...}{Optional arguments for the \code{plot()} function.}
 }
 \value{
-A list with three \code{data.frame}:
+A list with three \code{data.frame} and one \code{hclust}:
 \item{stats}{\code{data.frame} containing summary statistics by treatment.}
 \item{groups}{\code{data.frame} indicating the group to which each treatment is
 assigned.}

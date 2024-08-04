@@ -6,6 +6,7 @@ template:
     pkgdown-navbar-bg: '#2d3e50'
     pkgdown-navbar-bg-dark: '#2d3e50'
   light-switch: true
+  math-rendering: mathjax
 
 navbar:
   bg: dark
