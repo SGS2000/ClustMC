@@ -71,7 +71,7 @@ bss_test(y = model, trt = "treatments", show_plot = FALSE)
 Bautista, M. G., Smith, D. W., & Steiner, R. L. (1997).
 A Cluster-Based Approach to Means Separation. \emph{Journal of Agricultural,
 Biological, and Environmental Statistics, 2}(2), 179-197.
-\url{https://doi.org/10.2307/1400402}
+\doi{doi:10.2307/1400402}
 }
 \author{
 Santiago Garcia Sanchez

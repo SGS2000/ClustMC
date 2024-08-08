@@ -40,7 +40,7 @@ summary(bread)
 \references{
 Duncan, D. B. (1965). A bayesian approach to multiple
 comparisons. \emph{Technometrics, 7}(2), 171-222.
-\url{https://doi.org/10.2307/1266670}
+\doi{doi:10.2307/1266670}
 
 Jolliffe, I. T. (1975). Cluster analysis as a multiple comparison
 method. \emph{Applied Statistics: Proceedings of Conference at Dalhousie

@@ -52,7 +52,7 @@
 #' Multiple-Comparisons Method Based on the Distribution of the Root Node
 #' Distance of a Binary Tree. \emph{Journal of Agricultural, Biological, and
 #' Environmental Statistics, 7}(2), 129-142.
-#' <http://www.jstor.org/stable/1400690>
+#' <https://www.jstor.org/stable/1400690>
 #' @author Santiago Garcia Sanchez
 dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
                      abline_options, ...) {

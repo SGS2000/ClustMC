@@ -47,7 +47,7 @@
 #' @references Bautista, M. G., Smith, D. W., & Steiner, R. L. (1997).
 #' A Cluster-Based Approach to Means Separation. \emph{Journal of Agricultural,
 #' Biological, and Environmental Statistics, 2}(2), 179-197.
-#' <https://doi.org/10.2307/1400402>
+#' \doi{doi:10.2307/1400402}
 #' @author Santiago Garcia Sanchez
 # nolint start: cyclocomp_linter.
 bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,

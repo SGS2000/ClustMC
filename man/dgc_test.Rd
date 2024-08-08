@@ -76,7 +76,7 @@ Di Rienzo, J. A., Guzman, A. W., & Casanoves, F. (2002). A
 Multiple-Comparisons Method Based on the Distribution of the Root Node
 Distance of a Binary Tree. \emph{Journal of Agricultural, Biological, and
 Environmental Statistics, 7}(2), 129-142.
-\url{http://www.jstor.org/stable/1400690}
+\url{https://www.jstor.org/stable/1400690}
 }
 \author{
 Santiago Garcia Sanchez

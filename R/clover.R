@@ -24,11 +24,11 @@
 #' @references Bautista, M. G., Smith, D. W., & Steiner, R. L. (1997).
 #' A Cluster-Based Approach to Means Separation. \emph{Journal of Agricultural,
 #' Biological, and Environmental Statistics, 2}(2), 179-197.
-#' <https://doi.org/10.2307/1400402>
+#' \doi{doi:10.2307/1400402}
 #'
 #' Erdman, L. W. (1946). Studies to determine if antibiosis occurs among
 #' rhizobia. \emph{Journal of the American Society of Agronomy, 38},
-#' 251-258. <https://doi.org/10.2134/agronj1946.00021962003800030005x>
+#' 251-258. \doi{doi:10.2134/agronj1946.00021962003800030005x}
 #'
 #' @examples
 #' data(clover)
