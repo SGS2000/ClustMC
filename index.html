@@ -108,7 +108,7 @@
 <span><span class="va">plants_trt</span> <span class="op">&lt;-</span> <span class="va">PlantGrowth</span><span class="op">$</span><span class="va">group</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/dgc_test.html">dgc_test</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">plants_weights</span>, trt <span class="op">=</span> <span class="va">plants_trt</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-example1-1.png" alt="Example with dgc_test()" width="100%"></p>
+<p><img src="reference/figures/README-example1-1.png" alt="Example with dgc test" width="100%"></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#&gt;      group</span></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; ctrl     1</span></span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; trt1     1</span></span>
@@ -124,7 +124,7 @@
 <span><span class="va">anova_model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">volume</span> <span class="op">~</span> <span class="va">variety</span> <span class="op">+</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">as.factor</a></span><span class="op">(</span><span class="va">bromate</span><span class="op">)</span>, data <span class="op">=</span> <span class="va">bread</span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/jolliffe_test.html">jolliffe_test</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">anova_model</span>, trt <span class="op">=</span> <span class="st">"variety"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="reference/figures/README-example2-1.png" alt="Example with jolliffe_test" width="100%"></p>
+<p><img src="reference/figures/README-example2-1.png" alt="Example with jolliffe test" width="100%"></p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#&gt;   group</span></span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; M     1</span></span>
 <span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; P     2</span></span>
