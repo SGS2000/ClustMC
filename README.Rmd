@@ -27,7 +27,7 @@ All tests included in the package share similar features:
 
 -   Inspired by the [agricolae](https://myaseen208.com/agricolae/) package, it is possible to work with either two vectors (one for the response variable and one for the treatments) or a model (created with `lm()` or `aov()`). In the latter case, the name of the variable with the treatments must be specified.
 -   After applying the corresponding method, a table containing the treatments and their group (indicated by a number) is printed to the console. Treatments within the same group are not significantly different. The user can choose not to display the table.
--   By default, a dendrogram is plotted. The dendrogram can be customized with any argument passed to the `plot()` function. In addition, the data used to create the plot is made available to the user, so it is possible to use other libraries such as ggplot2.  
+-   By default, a dendrogram is plotted. The dendrogram can be customized with any argument passed to the `plot()` function. In addition, the data used to create the plot is made available to the user, so it is possible to use other libraries such as ggplot2.
 
 ------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ remotes::install_github("SGS2000/ClustMC")
 
 ```{r example1}
 #| fig.alt: >
-#|   Example with dgc_test()
+#|   Example with dgc test
 
 library(ClustMC)
 
@@ -78,7 +78,7 @@ dgc_test(y = plants_weights, trt = plants_trt)
 
 ```{r example2}
 #| fig.alt: >
-#|   Example with jolliffe_test
+#|   Example with jolliffe test
 library(ClustMC)
 
 data(bread)

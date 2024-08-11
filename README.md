@@ -94,7 +94,7 @@ plants_trt <- PlantGrowth$group
 dgc_test(y = plants_weights, trt = plants_trt)
 ```
 
-<img src="man/figures/README-example1-1.png" alt="Example with dgc_test()" width="100%" />
+<img src="man/figures/README-example1-1.png" alt="Example with dgc test" width="100%" />
 
     #>      group
     #> ctrl     1
@@ -125,7 +125,7 @@ anova_model <- aov(volume ~ variety + as.factor(bromate), data = bread)
 jolliffe_test(y = anova_model, trt = "variety")
 ```
 
-<img src="man/figures/README-example2-1.png" alt="Example with jolliffe_test" width="100%" />
+<img src="man/figures/README-example2-1.png" alt="Example with jolliffe test" width="100%" />
 
     #>   group
     #> M     1

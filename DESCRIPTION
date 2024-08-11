@@ -2,7 +2,7 @@ Package: ClustMC
 Title: Cluster-Based Multiple Comparisons
 Version: 0.0.0.9000
 Authors@R: 
-    person("Santiago", "Garcia Sanchez", , "santiagoesquel@gmail.com", 
+    person("Santiago", "Garcia Sanchez", ,"santiagoesquel@gmail.com",
     role = c("aut", "cre", "cph"))
 Description: Multiple comparison techniques are typically applied following an F
     test from an ANOVA to decide which means are significantly different from
