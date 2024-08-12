@@ -62,8 +62,15 @@ similares:
 
 ## Installation / Instalación
 
-The package can be installed from GitHub: / El paquete puede instalarse
-desde GitHub:
+The package can be installed from CRAN: / El paquete puede instalarse
+desde CRAN:
+
+``` r
+install.packages("ClustMC")
+```
+
+The development version is available from GitHub: / La versión en
+desarrollo está disponible en GitHub:
 
 ``` r
 remotes::install_github("SGS2000/ClustMC")
