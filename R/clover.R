@@ -15,7 +15,7 @@
 #' \describe{
 #'   \item{treatment}{a factor denoting the treatment applied to each plant.}
 #'   \item{nitrogen}{a number denoting the nitrogen content of each plant
-#'   (miligrams).}
+#'   (milligrams).}
 #' }
 #' @source Steel, R., & Torrie, J. (1980). \emph{Principles and procedures of
 #' statistics: A biometrical approach (2nd ed.)}. San Francisco: McGraw-Hill.

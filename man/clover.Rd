@@ -9,7 +9,7 @@ A tibble with 30 rows and 2 columns:
 \describe{
 \item{treatment}{a factor denoting the treatment applied to each plant.}
 \item{nitrogen}{a number denoting the nitrogen content of each plant
-(miligrams).}
+(milligrams).}
 }
 }
 \source{
