@@ -12,8 +12,8 @@
 <link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><script src="deps/MathJax-3.2.2/tex-chtml.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Cluster-Based Multiple Comparisons">
-<meta name="description" content="Multiple comparison techniques are typically applied following an F test from an ANOVA to decide which means are significantly different from one another. As an alternative to traditional methods, cluster analysis can be performed to group the means of different treatments into non-overlapping clusters. Treatments in different groups are considered statistically different. Several approaches have been proposed, with varying clustering methods and cut-off criteria. This package implements cluster-based multiple comparisons tests and also provides a visual representation in the form of a dendrogram.">
-<meta property="og:description" content="Multiple comparison techniques are typically applied following an F test from an ANOVA to decide which means are significantly different from one another. As an alternative to traditional methods, cluster analysis can be performed to group the means of different treatments into non-overlapping clusters. Treatments in different groups are considered statistically different. Several approaches have been proposed, with varying clustering methods and cut-off criteria. This package implements cluster-based multiple comparisons tests and also provides a visual representation in the form of a dendrogram.">
+<meta name="description" content="Multiple comparison techniques are typically applied following an F test from an ANOVA to decide which means are significantly different from one another. As an alternative to traditional methods, cluster analysis can be performed to group the means of different treatments into non-overlapping clusters. Treatments in different groups are considered statistically different. Several approaches have been proposed, with varying clustering methods and cut-off criteria. This package implements cluster-based multiple comparisons tests and also provides a visual representation in the form of a dendrogram. Di Rienzo, J. A., Guzman, A. W., &amp; Casanoves, F. (2002) &lt;jstor.org/stable/1400690&gt;. Bautista, M. G., Smith, D. W., &amp; Steiner, R. L. (1997) &lt;doi:10.2307/1400402&gt;.">
+<meta property="og:description" content="Multiple comparison techniques are typically applied following an F test from an ANOVA to decide which means are significantly different from one another. As an alternative to traditional methods, cluster analysis can be performed to group the means of different treatments into non-overlapping clusters. Treatments in different groups are considered statistically different. Several approaches have been proposed, with varying clustering methods and cut-off criteria. This package implements cluster-based multiple comparisons tests and also provides a visual representation in the form of a dendrogram. Di Rienzo, J. A., Guzman, A. W., &amp; Casanoves, F. (2002) &lt;jstor.org/stable/1400690&gt;. Bautista, M. G., Smith, D. W., &amp; Steiner, R. L. (1997) &lt;doi:10.2307/1400402&gt;.">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="index.html">ClustMC</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.0.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,8 +88,11 @@
 <div class="section level2">
 <h2 id="installation--instalación">Installation / Instalación<a class="anchor" aria-label="anchor" href="#installation--instalaci%C3%B3n"></a>
 </h2>
-<p>The package can be installed from GitHub: / El paquete puede instalarse desde GitHub:</p>
+<p>The package can be installed from CRAN: / El paquete puede instalarse desde CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ClustMC"</span><span class="op">)</span></span></code></pre></div>
+<p>The development version is available from GitHub: / La versión en desarrollo está disponible en GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"SGS2000/ClustMC"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -100,7 +103,7 @@
 </h3>
 <p>🇬🇧 The following example applies the Di Rienzo, Guzmán, and Casanoves test to evaluate whether there are significant differences between the yields obtained under a control and two different treatment conditions. In this case, vectors are passed as arguments.</p>
 <p>🇪🇸 El siguiente ejemplo aplica la prueba de Di Rienzo, Guzmán y Casanoves para evaluar si existen diferencias significativas entre los rendimientos obtenidos bajo una condición de control y dos condiciones de tratamiento diferentes. En este caso, se pasan vectores como argumentos.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SGS2000/ClustMC" class="external-link">ClustMC</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">PlantGrowth</span><span class="op">)</span></span>
@@ -109,15 +112,15 @@
 <span></span>
 <span><span class="fu"><a href="reference/dgc_test.html">dgc_test</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">plants_weights</span>, trt <span class="op">=</span> <span class="va">plants_trt</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example1-1.png" alt="Example with dgc test" width="100%"></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#&gt;      group</span></span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; ctrl     1</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; trt1     1</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; trt2     2</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; Treatments within the same group are not significantly different</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#&gt;      group</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co">#&gt; ctrl     1</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#&gt; trt1     1</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; trt2     2</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">#&gt; Treatments within the same group are not significantly different</span></span></code></pre></div>
 <hr>
 <p>🇬🇧 In the following example, a dataset with results from a bread-baking experiment is used. An ANOVA model is fitted, with the volume of the loaves as a response variable and the amount of potassium bromate and the variety of wheat as explanatory variables. The Jolliffe test is then applied to evaluate differences between the 17 varieties.</p>
 <p>🇪🇸 En el siguiente ejemplo, se utiliza un dataset con los resultados de un experimento de panadería. Se ajusta un modelo ANOVA con el volumen de los panes como variable respuesta y la cantidad de bromato de potasio y la variedad de trigo como variables explicativas. La prueba de Jolliffe se aplica luego para evaluar las diferencias entre las 17 variedades.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/SGS2000/ClustMC" class="external-link">ClustMC</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">bread</span><span class="op">)</span></span>
@@ -125,25 +128,25 @@
 <span></span>
 <span><span class="fu"><a href="reference/jolliffe_test.html">jolliffe_test</a></span><span class="op">(</span>y <span class="op">=</span> <span class="va">anova_model</span>, trt <span class="op">=</span> <span class="st">"variety"</span><span class="op">)</span></span></code></pre></div>
 <p><img src="reference/figures/README-example2-1.png" alt="Example with jolliffe test" width="100%"></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#&gt;   group</span></span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co">#&gt; M     1</span></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#&gt; P     2</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co">#&gt; D     2</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#&gt; C     2</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="co">#&gt; Q     2</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="co">#&gt; L     2</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="co">#&gt; H     2</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="co">#&gt; G     2</span></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="co">#&gt; N     2</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="co">#&gt; B     2</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="co">#&gt; F     2</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="co">#&gt; I     2</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="co">#&gt; K     2</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="co">#&gt; J     2</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="co">#&gt; E     2</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="co">#&gt; A     2</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="co">#&gt; O     2</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="co">#&gt; Treatments within the same group are not significantly different</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#&gt;   group</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co">#&gt; M     1</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#&gt; P     2</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co">#&gt; D     2</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="co">#&gt; C     2</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="co">#&gt; Q     2</span></span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="co">#&gt; L     2</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="co">#&gt; H     2</span></span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="co">#&gt; G     2</span></span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="co">#&gt; N     2</span></span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="co">#&gt; B     2</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="co">#&gt; F     2</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="co">#&gt; I     2</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="co">#&gt; K     2</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="co">#&gt; J     2</span></span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="co">#&gt; E     2</span></span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="co">#&gt; A     2</span></span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="co">#&gt; O     2</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="co">#&gt; Treatments within the same group are not significantly different</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="customizing-plots--personalizar-gráficos">Customizing plots / Personalizar gráficos<a class="anchor" aria-label="anchor" href="#customizing-plots--personalizar-gr%C3%A1ficos"></a>
@@ -156,6 +159,7 @@
   </main><aside class="col-md-3"><div class="links">
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
+<li><a href="https://cloud.r-project.org/package=ClustMC" class="external-link">View on CRAN</a></li>
 <li><a href="https://github.com/SGS2000/ClustMC/" class="external-link">Browse source code</a></li>
 <li><a href="https://github.com/SGS2000/ClustMC/issues" class="external-link">Report a bug</a></li>
 </ul>
