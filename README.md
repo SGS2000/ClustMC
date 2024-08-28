@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ClustMC
+# ClustMC <a href="https://sgs2000.github.io/ClustMC/"><img src="man/figures/logo.png" align="right" height="139" alt="ClustMC website" /></a>
 
 <!-- badges: start -->
 
@@ -9,6 +9,9 @@
 [![codecov](https://codecov.io/gh/SGS2000/ClustMC/branch/master/graph/badge.svg)](https://app.codecov.io/gh/SGS2000/ClustMC)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ClustMC)](https://CRAN.R-project.org/package=ClustMC)
+[![](https://img.shields.io/badge/DOI-10.32614/CRAN.package.ClustMC-1f57b6?style=flat&link=https://doi.org/10.32614/CRAN.package.ClustMC)](https://doi.org/10.32614/CRAN.package.ClustMC)
 
 <!-- badges: end -->
 
