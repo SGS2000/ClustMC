@@ -1,3 +1,9 @@
+# ClustMC 0.1.2
+
+* Switched from the magrittr pipe to the base R pipe.
+* Removed `magrittr` dependency.
+* Minimum version for R is now 4.1.0.
+
 # ClustMC 0.1.1
 
 * Updated `DESCRIPTION` with references. 

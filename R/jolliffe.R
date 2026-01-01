@@ -77,8 +77,8 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
   # Avoid errors with R CMD check
   treatment <- var_y <- NULL
 
-  dataset <- dataset %>%
-    dplyr::group_by(treatment) %>%
+  dataset <- dataset |>
+    dplyr::group_by(treatment) |>
     dplyr::summarise(
       r = dplyr::n(),
       mean = mean(var_y),
@@ -97,7 +97,7 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
   }
 
   # Ordering means to calculate range
-  dataset_ord <- dataset %>%
+  dataset_ord <- dataset |>
     dplyr::arrange(mean)
   dataset_ord$range <- seq_len(nrow(dataset))
 
@@ -126,7 +126,7 @@ jolliffe_test <- function(y, trt, alpha = 0.05, method = "single",
 
   # Distances are studentized to calculate p-values
   matrix_d <- matrix_dist / sample_s
-  matrix_p <- stats::ptukey(matrix_d, matrix_range, df_tukey) %>%
+  matrix_p <- stats::ptukey(matrix_d, matrix_range, df_tukey) |>
     usedist::dist_setNames(dataset_ord$treatment)
 
   # Specified clustering is applied

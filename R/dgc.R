@@ -77,8 +77,8 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   treatment <- var_y <- NULL
 
   # k` is necessary to obtain `Q`
-  dataset <- dataset %>%
-    dplyr::group_by(treatment) %>%
+  dataset <- dataset |>
+    dplyr::group_by(treatment) |>
     dplyr::summarise(
       r = dplyr::n(),
       mean = mean(var_y),
@@ -114,7 +114,7 @@ dgc_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   value_c <- value_q * sqrt(mse / n)
 
   # A matrix with the Euclidean distances is built
-  matrix_d <- stats::dist(dataset$mean, method = "euclidean") %>%
+  matrix_d <- stats::dist(dataset$mean, method = "euclidean") |>
     usedist::dist_setNames(dataset$treatment)
 
   # Average linkage clustering is applied
@@ -187,7 +187,7 @@ find_q <- function(value_n, value_k, value_alpha = 0.05) {
     value_q <- dplyr::filter(t99, t95$n == value_n, t95$k == value_k)$valor
   }
 
-  return(value_q)
+  value_q
 }
 
 #' Plot the dendrogram

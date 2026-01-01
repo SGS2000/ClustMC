@@ -1,6 +1,6 @@
 Package: ClustMC
 Title: Cluster-Based Multiple Comparisons
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person("Santiago", "Garcia Sanchez", ,"santiagoesquel@gmail.com",
     role = c("aut", "cre", "cph"))
@@ -17,20 +17,19 @@ Description: Multiple comparison techniques are typically applied following an F
     W., & Steiner, R. L. (1997) <doi:10.2307/1400402>.
 License: MIT + file LICENSE
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1.0)
 Imports: 
     cli,
     dplyr,
     graphics,
     lifecycle,
-    magrittr,
     procs,
     psych,
     stats,
     usedist
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Suggests: 
     ggdendro,
     ggplot2,

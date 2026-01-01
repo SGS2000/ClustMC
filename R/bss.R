@@ -127,8 +127,8 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
   colnames(full_data)[1] <- "var_y"
   colnames(full_data)[which(colnames(full_data) == trt)] <- "treatment"
 
-  dataset <- full_data %>%
-    dplyr::group_by(treatment) %>%
+  dataset <- full_data |>
+    dplyr::group_by(treatment) |>
     dplyr::summarise(
       r = dplyr::n(),
       mean = mean(var_y),
@@ -136,7 +136,7 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
       median = stats::median(var_y),
       min = min(var_y),
       max = max(var_y)
-    ) %>%
+    ) |>
     dplyr::arrange(mean)
 
   # Multiple comparisons require more than two treatments
@@ -170,7 +170,7 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
       groups <- which(matrix_dif == min(matrix_dist), arr.ind = TRUE)[1, ]
       equal_trt <- dataset[groups, ]$treatment
 
-      full_data <- full_data %>%
+      full_data <- full_data |>
         dplyr::mutate(
           group = dplyr::case_when(
             treatment %in% c(equal_trt) ~ "1",
@@ -178,13 +178,13 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
           )
         )
 
-      previous_data <- full_data %>%
+      previous_data <- full_data |>
         dplyr::mutate(group = treatment)
     } else {
       previous_data <- full_data
 
-      means <- full_data %>%
-        dplyr::group_by(group) %>%
+      means <- full_data |>
+        dplyr::group_by(group) |>
         dplyr::summarise(
           mean = mean(var_y)
         )
@@ -198,7 +198,7 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
 
       # If a group already exists, it's merged with the treatment
       if (any(equal_trt %in% as.character(c(1:iter)))) {
-        full_data <- full_data %>%
+        full_data <- full_data |>
           dplyr::mutate(
             group = dplyr::case_when(
               group %in% c(equal_trt) == TRUE ~ min(
@@ -208,7 +208,7 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
             )
           )
       } else {
-        full_data <- full_data %>%
+        full_data <- full_data |>
           dplyr::mutate(
             group = dplyr::case_when(
               treatment %in% c(equal_trt) == TRUE ~ as.character(iter),
@@ -233,12 +233,12 @@ bss_test <- function(y, trt, alpha = 0.05, show_plot = TRUE, console = TRUE,
 
   # Transforms groups into numbers in order
   groups <- dplyr::right_join(dataset,
-    previous_data %>%
-      dplyr::select(treatment, group) %>%
+    previous_data |>
+      dplyr::select(treatment, group) |>
       dplyr::distinct(),
     by = dplyr::join_by(treatment)
-  ) %>%
-    dplyr::select(treatment, group) %>%
+  ) |>
+    dplyr::select(treatment, group) |>
     dplyr::mutate(group = as.numeric(factor(group, levels = unique(group))))
 
   if (show_plot) {
